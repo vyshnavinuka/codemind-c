@@ -7,21 +7,18 @@ int main()
     for(i=0;i<n;i++)
     {
         scanf("%d",&a[i]);
-        //printf("%d ",a[i]);
     }
-    int min=a[0];
+    int max=a[0];
     for(i=0;i<n;i++)
     {
-        if(min<a[i])
+        if(max<a[i])
         {
-            min=a[i];
+            max=a[i];
         }
     }
-    //printf("
-
-     while(min)
+        while(max)
             {
-                min=min/10;
+                max=max/10;
                 d++;
             }
     int k=0;
