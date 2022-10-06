@@ -1,41 +1,41 @@
 #include<stdio.h>
-int main()
+int isprime(int num)
 {
-    int n,i,j;
-    float sum=0;
-    scanf("%d",&n);
-    int ar[n];
-    for(i=0;i<n;i++)
+    int i,p=0;
+    for(i=1;i<=num;i++)
     {
-        scanf("%d",&ar[i]);
-        //printf("%d ",ar[i]);
-    }
-    int c=0,l=0;
-    //printf("
-
-    for(i=0;i<n;i++)
-    {
-        c=0;
-        if(ar[i]==1)
-        c=1;
-            for(j=2;j<ar[i];j++)
-            {
-                    if(ar[i]%j==0)
-                    {
-                        c++;
-                        break;
-                    }
-            }
-        if(c==0)
+        if(num%i==0)
         {
-            //printf("%d ",ar[i]);
-            sum=sum+ar[i];
-            l++;
+            p++;
         }
     }
-   // printf("
-
-    float z=sum,y=l,x;
-    x=z/l;
-    printf("%.2f",x);
+    if(p==2)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+int main()
+{
+    int n,i,arr[100],k=0,p;
+    float sum=0,avg;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        p=isprime(arr[i]);
+        if(p==1)
+        {
+            k++;
+            sum=sum+arr[i];
+        }
+    }
+    avg=(float)sum/k;
+    printf("%.2f",avg);
 }
