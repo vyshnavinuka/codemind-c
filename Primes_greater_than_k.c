@@ -1,38 +1,35 @@
 #include<stdio.h>
 int main()
 {
-    int n,i,j,z;
-    int s=0;
+    int a[100],n,c,s=0,i,f=0,k=0,j;
     scanf("%d",&n);
-    int ar[n];
     for(i=0;i<n;i++)
     {
-        scanf("%d",&ar[i]);
-       // printf("%d ",ar[i]);
+        scanf("%d",&a[i]);
     }
-    scanf("%d",&z);
-    //printf("
-    int c=0,l=0;
+    scanf("%d",&c);
     for(i=0;i<n;i++)
     {
-        if(ar[i]>=z)
+        if(a[i]==1)
         {
-            c=0;
-            if(ar[i]==1)
-            c=1;
-                for(j=2;j<ar[i];j++)
-                {
-                        if(ar[i]%j==0)
-                        {
-                            c++;
-                            break;
-                        }
-                }
-            if(c==0)
+            k=0;
+        }
+        else
+        {
+            for(j=2;j<=a[i]/2;j++)
             {
-               s++; 
+                f=0;
+                if(a[i]%j==0)
+                {
+                    f=1;
+                    break;
+                }
+            }
+            if(a[i]>=c && f==0)
+            {
+                s=s+1;
             }
         }
     }
-printf("%d",s);
+    printf("%d",s);
 }
