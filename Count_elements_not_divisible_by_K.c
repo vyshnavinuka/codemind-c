@@ -1,15 +1,18 @@
 #include<stdio.h>
-#include<stdlib.h>
 int main()
 {
-    int n,k,i,c=0;
+    int n,i,c=0,arr[100],k;
     scanf("%d%d",&n,&k);
-    int a[n];
     for(i=0;i<n;i++)
     {
-        scanf("%d",&a[i]);
-        if(a[i]%k!=0)
-        c++;
+        scanf("%d",&arr[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        if(arr[i]%k!=0)
+        {
+            c++;
+        }
     }
     printf("%d",c);
 }
